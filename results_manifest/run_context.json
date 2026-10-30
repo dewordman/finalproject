@@ -1,0 +1,14 @@
+{
+  "results_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\results_manifest",
+  "run_tag": "results_manifest",
+  "config_digest": "d7900d31fdca67a9ba0d166f72a2a6263182fe48cea19172b2961f3347d6ad8c",
+  "paths": {
+    "raw_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\data\\raw",
+    "processed_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\data\\processed\\results_manifest",
+    "results_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\results_manifest",
+    "models_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\models\\results_manifest",
+    "configs_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\configs",
+    "logs_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\logs",
+    "locks_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\locks"
+  }
+}

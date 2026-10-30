@@ -1,0 +1,44 @@
+{
+  "run_id": "40aecbd9-a0a6-4fdb-b228-c6fa29293a7d",
+  "config_digest": "d7900d31fdca67a9ba0d166f72a2a6263182fe48cea19172b2961f3347d6ad8c",
+  "python_version": "3.14.4",
+  "package_versions": {
+    "python": "3.14.4",
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0",
+    "beautifulsoup4": "4.15.0",
+    "lxml": "6.1.3",
+    "langdetect": "1.0.9",
+    "PyYAML": "6.0.3",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "streamlit": "1.64.0",
+    "pytest": "9.1.1"
+  },
+  "hardware": {
+    "system": "Windows",
+    "release": "11",
+    "version": "10.0.26100",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+    "cpu_count": "12"
+  },
+  "seed": 42,
+  "started_at": "2026-10-20T11:14:03.893163+00:00",
+  "completed_at": "2026-10-20T11:14:04.238875+00:00",
+  "stages": [
+    {
+      "name": "manifest",
+      "started_at": "2026-10-20T11:14:03.893587+00:00",
+      "completed_at": "2026-10-20T11:14:04.238848+00:00",
+      "duration_seconds": 0.345,
+      "outputs": [
+        "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\data\\processed\\results_manifest\\manifest.csv"
+      ],
+      "status": "ok"
+    }
+  ]
+}

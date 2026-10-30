@@ -1,0 +1,186 @@
+seed: 42
+classes:
+  Legitimate: 0
+  Spam: 1
+  Phishing: 2
+paths:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  results_dir: "results_rev3"
+  models_dir: "models"
+  configs_dir: "configs"
+  logs_dir: "logs"
+  locks_dir: "locks"
+nazario:
+  main_dir: "data/raw/nazario"
+  main_files: ["phishing0.mbox", "phishing1.mbox", "phishing2.mbox", "phishing3.mbox", "20051114.mbox"]
+  external_dir: "data/raw/nazario_external"
+  excluded_files: ["private-phishing4.mbox"]
+  allow_csv: false
+  file_year_default:
+    phishing0.mbox: 2005
+    phishing1.mbox: 2005
+    phishing2.mbox: 2006
+    phishing3.mbox: 2007
+    20051114.mbox: 2005
+sources:
+  enron_spam: 
+    url: "https://github.com/MWiechmann/enron_spam_data"
+    licence: "GPL-3.0"
+    note: "Enterprise email corpus from Enron Corporation, containing legitimate and spam messages"
+  spamassassin: 
+    url: "https://www.kaggle.com/datasets/beatoa/spamassassin-public-corpus"
+    licence: "CC0: Public Domain"
+    note: "Public corpus of spam and legitimate emails collected by SpamAssassin project"
+  nazario: 
+    url: "https://monkey.org/~jose/phishing/"
+    licence: "CC-BY-4.0"
+
+text:
+  max_input_chars: 20000
+  mask_terms:
+    # Parsing artifacts
+    - "body url"
+    - "subject body"
+    - "body here"
+    - "body louise"
+    - "body please"
+    - "body hello"
+    - "account body"
+    - "bank body"
+    - "measures body"
+    - "announce body"
+    - "url date"
+    - "pictures body"
+    - "cc subject"
+    - "attached is"
+    - "see attached"
+    - "forwarded by"
+    - "subject hpl"
+    # Enron leakage
+    - "enron"
+    - "enron com"
+    - "enron enron"
+    - "ect"
+    - "hou ect"
+    - "ect ect"
+    - "ect on"
+    - "ect cc"
+    - "lon ect"
+    - "corp enron"
+    - "ena"
+    - "ees"
+    - "hpl"
+    - "713"
+    - "713 853"
+    - "houston"
+    - "texas"
+    - "vince"
+    - "kaminski"
+    - "vince kaminski"
+    - "kaminski hou"
+    - "louise"
+    - "daren"
+    - "kevin"
+    - "steve"
+    - "john"
+    - "mike"
+    - "mmbtu"
+    - "hourahead"
+    - "01 hourahead"
+    - "02 hourahead"
+    - "hourahead hour"
+    - "westdesk"
+    - "portland westdesk"
+    - "california scheduling"
+    - "scheduling iso"
+    - "iso final"
+    - "final schedules"
+    - "ancillary schedules"
+    - "no ancillary"
+    - "variances"
+    - "variances detected"
+    - "no variances"
+    - "detected log"
+    - "log messages"
+    - "messages parsing"
+    - "parsing file"
+    - "schedules awarded"
+    - "awarded no"
+    - "file portland"
+    - "hou"
+    - "853"
+    - "corp"
+    - "xls"
+    - "01"
+    - "11"
+    # Spam/Phishing artifacts
+    - "paliourg"
+    - "computron"
+    - "www computron"
+    - "computron me"
+    - "wysak"
+    - "projecthoneypot"
+    - "andmanyother"
+    - "0x0"
+    - "0x1"
+    - "0x2"
+    - "0x3"
+    - "0x4"
+    - "0x5"
+    - "0x6"
+    - "0x7"
+    - "0x8"
+    - "0x9"
+    - "spoof fake"
+    - "from spoof"
+  mask_dates: false
+  mask_mode: "delete"
+  strip_temporal_cues: true
+  strip_urls: true
+  strip_email_addresses: true
+  strip_header_remnants: true
+  decode_html_in_csv_sources: true
+language:
+  min_chars_for_detection: 30
+  allowed: ["en"]
+split:
+  ratios: [0.70, 0.15, 0.15]
+  n_candidates: 200
+dedup:
+  near_dup_threshold: 0.90
+  review_sample_size: 200
+audit:
+  top_n: 50
+  dominance_threshold: 0.90
+  min_source_count: 5
+calibration:
+  n_folds: 5
+  method: "auto"
+grid:
+  tfidf:
+    ngram_range: [[1, 1], [1, 2]]
+    min_df: [2, 3, 5]
+    sublinear_tf: [false, true]
+    max_features: [null]
+  logreg:
+    C: [0.1, 1, 10]
+    class_weight: [null, "balanced"]
+    max_iter: 1000
+  nb:
+    alpha: [0.1, 0.5, 1.0]
+  svm:
+    C: [0.1, 1, 10]
+    max_iter: 5000
+selection:
+  min_phishing_recall: 0.89
+  max_legit_fpr: 0.03
+evaluation:
+  bootstrap_reps: 1000
+  ci_level: 0.95
+  top_n_terms: 5
+  variation_per_class: 150
+error_review:
+  per_category: 25
+decision:
+  table_path: "configs/decision_table.yaml"

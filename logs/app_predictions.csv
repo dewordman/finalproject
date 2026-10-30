@@ -1,0 +1,7 @@
+timestamp,input_sha256_16,predicted_class,confidence,confidence_method,risk_band,advisory_action,model_version,rule_version,top_terms
+2026-10-20T12:48:16,5d6d0a56f6ea62e5,Spam,0.2160,sigmoid,low,Review,20261017_123218_2cdb08683ef48459,1.1,
+2026-10-20T12:54:27,5d6d0a56f6ea62e5,Spam,0.2160,sigmoid,low,Review,20261017_123218_2cdb08683ef48459,1.1,
+2026-10-20T12:54:47,5d6d0a56f6ea62e5,Spam,0.2160,sigmoid,low,Review,20261017_123218_2cdb08683ef48459,1.1,
+2026-10-20T13:04:24,a23a3d58247ce937,Phishing,0.9792,sigmoid,high,"Verify the sender through a separate channel, quarantine for analyst review and escalate",20261017_123218_2cdb08683ef48459,1.1,
+2026-10-20T13:06:40,c22cd6bb9db2fe6c,Spam,0.8422,sigmoid,moderate,Moderate confidence; analyst verification recommended,20261017_123218_2cdb08683ef48459,1.1,
+2026-10-20T13:09:01,2457e5493c95d5ef,Legitimate,0.9993,sigmoid,high,Allow (advisory only),20261017_123218_2cdb08683ef48459,1.1,

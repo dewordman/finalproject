@@ -1,0 +1,26 @@
+# Python environments
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Raw research datasets (keep locally)
+data/raw/
+
+# Generated processed datasets
+data/processed/
+
+# Trained machine learning models
+models/
+
+# Experiment results
+results/
+results_rev*/
+
+# Temporary files and logs
+*.log
+*.tmp
+
+# Python serialized artifacts
+*.pkl
+*.joblib

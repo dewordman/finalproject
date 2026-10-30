@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-10-17T12:41:17.086684+00:00",
+  "run_id": "3e8ec72e-ea4e-42a1-b2ea-9e6e75bcf707",
+  "reason": "Clean rebuild after index stage cleanup",
+  "config_digest": "2cdb08683ef4845967e88c099d3922d12c5766d759223954541ec29ad687d33f",
+  "results_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\results_rev5",
+  "status": "completed",
+  "history": [
+    {
+      "timestamp": "2026-10-07T14:00:09.929096+00:00",
+      "run_id": "ee225b09-47f1-4b56-a90c-7c6d1f91646d",
+      "reason": "revision 3: <it has a better logreg numbers>",
+      "config_digest": "bec080a3f222cfac88150364ffca8586d3093220b9eb20db5c372dbb46780a71",
+      "results_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\results_rev3",
+      "status": "completed",
+      "completed_at": "2026-10-07T14:00:31.846922+00:00",
+      "summary_keys": [
+        "timestamp",
+        "run_id",
+        "config_digest",
+        "partition",
+        "test_size",
+        "bootstrap_reps",
+        "ci_level",
+        "models"
+      ]
+    },
+    {
+      "timestamp": "2026-10-17T08:25:51.135696+00:00",
+      "run_id": "2e002507-c72e-467c-9772-5d055473fa92",
+      "reason": "revision 5: strip_urls: false and strip_email_addresses: false",
+      "config_digest": "6ca701060975ff4912b5be7b27ed6ca8e7b5c3ad97a524b76619ade19b71e11b",
+      "results_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\results_rev5",
+      "status": "completed",
+      "completed_at": "2026-10-17T08:26:13.037076+00:00",
+      "summary_keys": [
+        "timestamp",
+        "run_id",
+        "config_digest",
+        "partition",
+        "test_size",
+        "bootstrap_reps",
+        "ci_level",
+        "models"
+      ]
+    }
+  ],
+  "completed_at": "2026-10-17T12:41:41.406175+00:00",
+  "summary_keys": [
+    "timestamp",
+    "run_id",
+    "config_digest",
+    "partition",
+    "test_size",
+    "bootstrap_reps",
+    "ci_level",
+    "models"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-10-17T12:41:43.278248+00:00",
+  "run_id": "c61ee250-694e-4d3c-b871-0de3c8e74d93",
+  "reason": "Clean rebuild after index stage cleanup",
+  "experiment": "nazario_temporal",
+  "config_digest": "2cdb08683ef4845967e88c099d3922d12c5766d759223954541ec29ad687d33f",
+  "results_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\results_rev5",
+  "status": "completed",
+  "history": [
+    {
+      "timestamp": "2026-10-07T14:01:23.120041+00:00",
+      "run_id": "dbf0f975-54b1-4700-bb70-084e02824226",
+      "reason": null,
+      "experiment": "nazario_temporal",
+      "config_digest": "bec080a3f222cfac88150364ffca8586d3093220b9eb20db5c372dbb46780a71",
+      "results_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\results_rev3",
+      "status": "completed",
+      "completed_at": "2026-10-07T14:04:27.809288+00:00"
+    },
+    {
+      "timestamp": "2026-10-17T08:33:41.711387+00:00",
+      "run_id": "a6de2d90-cd04-4952-9ea3-863409fa38b9",
+      "reason": "Revision 5: Re-running temporal analysis after disabling URL and email stripping to fix Enron tokenization artifacts. Previous temporal results were based on config with strip_urls=true which created source leakage.",
+      "experiment": "nazario_temporal",
+      "config_digest": "6ca701060975ff4912b5be7b27ed6ca8e7b5c3ad97a524b76619ade19b71e11b",
+      "results_dir": "C:\\Users\\IT Support\\Downloads\\code_rev2_complete\\results_rev5",
+      "status": "completed",
+      "completed_at": "2026-10-17T08:37:53.469437+00:00"
+    }
+  ],
+  "completed_at": "2026-10-17T12:45:56.892012+00:00"
+}

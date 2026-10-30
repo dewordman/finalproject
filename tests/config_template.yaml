@@ -1,0 +1,83 @@
+# config_rev2.yaml
+seed: 42
+classes:
+  Legitimate: 0
+  Spam: 1
+  Phishing: 2
+paths:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  results_dir: "results_rev2"
+  models_dir: "models"
+  configs_dir: "configs"
+  logs_dir: "logs"
+  locks_dir: "locks"
+nazario:
+  main_dir: "data/raw/nazario"
+  main_files: ["phishing0.mbox", "phishing1.mbox", "phishing2.mbox", "phishing3.mbox", "20051114.mbox"]
+  external_dir: "data/raw/nazario_external"
+  excluded_files: ["private-phishing4.mbox"]
+  allow_csv: false
+  file_year_default:
+    phishing0.mbox: 2005
+    phishing1.mbox: 2005
+    phishing2.mbox: 2006
+    phishing3.mbox: 2007
+    20051114.mbox: 2005
+sources:
+  enron_spam: {url: "", note: ""}
+  spamassassin: {url: "", note: ""}
+  nazario: {url: "https://monkey.org/~jose/phishing/", licence: "CC-BY-4.0"}
+text:
+  max_input_chars: 20000
+  mask_terms: []          # chosen BY HAND after the audit (see scripts/suggest_mask_terms.py)
+  mask_dates: false       # kept for compatibility; strip_temporal_cues supersedes it
+  mask_mode: "delete"     # "delete" removes terms; "token" replaces them by "maskedterm"
+  strip_temporal_cues: true
+  strip_urls: false       # OFF: Enron-Spam links are tokenised ("http : / / x . com"), so stripping would create a cue
+  strip_email_addresses: false  # OFF for the same reason (Enron: "name @ host . com")
+  strip_header_remnants: true
+  decode_html_in_csv_sources: true
+language:
+  min_chars_for_detection: 30
+  allowed: ["en"]
+split:
+  ratios: [0.70, 0.15, 0.15]
+  n_candidates: 200
+dedup:
+  near_dup_threshold: 0.90
+  review_sample_size: 200
+audit:
+  top_n: 50
+  dominance_threshold: 0.90
+  min_source_count: 5
+calibration:
+  n_folds: 5
+  method: "auto"
+grid:
+  tfidf:
+    ngram_range: [[1, 1], [1, 2]]
+    min_df: [2, 3, 5]
+    sublinear_tf: [false, true]
+    max_features: [null]
+  logreg:
+    C: [0.1, 1, 10]
+    class_weight: [null, "balanced"]
+    max_iter: 1000
+  nb:
+    alpha: [0.1, 0.5, 1.0]
+  svm:
+    C: [0.1, 1, 10]
+    max_iter: 5000
+selection:
+  min_phishing_recall: null
+  max_legit_fpr: null
+evaluation:
+  bootstrap_reps: 1000
+  ci_level: 0.95
+  top_n_terms: 5
+  variation_per_class: 150
+error_review:
+  per_category: 25
+decision:
+  table_path: "configs/decision_table.yaml"
