@@ -1,4 +1,4 @@
-# Email Spam and Phishing Detection: Machine Learning Pipeline
+# Development and Evaluation of an Interpretable TF-IDF and Logistic Regression Multi-Class Email Threat Classification and Decision-Support System Using Heterogeneous Public Datasets for Application in Nigerian Oil and Gas Operations
 
 A configurable, multi-stage machine-learning pipeline for email acquisition, preprocessing, deduplication, dataset partitioning, model training, calibration, evaluation and diagnostic analysis.
 
@@ -382,7 +382,7 @@ Dataset owners and original researchers should be appropriately acknowledged whe
 
 **Repository:** https://github.com/dewordman/finalproject
 
-**Project:** Email Spam and Phishing Detection Using Machine Learning
+**Project:** Development and Evaluation of an Interpretable TF-IDF and Logistic Regression Multi-Class Email Threat Classification and Decision-Support System Using Heterogeneous Public Datasets for Application in Nigerian Oil and Gas Operations
 
 **Author:** Babatunde Ajibola
 
